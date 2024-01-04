@@ -7,7 +7,7 @@ const Header = () => {
       <div className="admin">
         <p style={{ fontSize: 17 }}>Mustafa Ahmed Abdulrazaq</p>
 
-        <img src={picss} alt="" />
+        <img src={picss} />
       </div>
     </div>
   );

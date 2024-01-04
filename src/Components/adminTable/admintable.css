@@ -6,3 +6,20 @@
   top: 5px;
   left: 0;
 }
+.search {
+  margin-top: -20px;
+
+  width: 318px;
+  height: 45px;
+  border: 1px solid rgb(113, 59, 78);
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 20px;
+  outline: none;
+  overflow: hidden;
+}
+.searchBar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}

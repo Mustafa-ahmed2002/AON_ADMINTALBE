@@ -4,7 +4,7 @@ import "./admintable.css";
 
 const AdminTable = ({ API_DATA }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-
+  const [value, setValue] = useState("");
   const handleChange = () => {
     setIsModalVisible(true);
   };
@@ -98,10 +98,21 @@ const AdminTable = ({ API_DATA }) => {
     Description: item.description,
     price: `${item.price}$`,
   }));
-
+  const filteredData = data?.filter((item) =>
+    item.Product?.toLowerCase().includes(value.toLowerCase())
+  );
   return (
     <div>
-      <Table className="table" columns={columns} dataSource={data} />
+      <div className="searchBar">
+        <input
+          className="search"
+          type="search"
+          placeholder="Search For Product"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </div>
+      <Table className="table" columns={columns} dataSource={filteredData} />
       <Modal
         title="Modify Product"
         open={isModalVisible}

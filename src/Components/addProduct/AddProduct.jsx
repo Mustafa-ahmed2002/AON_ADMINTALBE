@@ -3,7 +3,6 @@ import { Button, Flex, Modal } from "antd";
 import "./button.css";
 const AddProduct = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [search, setSearch] = useState("");
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -34,10 +33,7 @@ const AddProduct = () => {
 
   return (
     <div className="btns">
-      <input type="text" placeholder="Find Product" />
-      <Button type="primary" onClick={showModal}>
-        +Add product
-      </Button>
+      <button onClick={showModal}>+Add product</button>
       <Modal
         title="Basic Modal"
         open={isModalOpen}
